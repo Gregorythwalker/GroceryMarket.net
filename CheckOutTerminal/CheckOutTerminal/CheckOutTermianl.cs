@@ -27,7 +27,6 @@ namespace CheckOutTerminal
             _productDict.Add("D", 0);
         }
 
-        Dictionary<string, decimal> productOrder = new Dictionary<string, decimal>();
         private void SetPricing()
         {
             _pricingDict = _pricingRepo.GetPricing();
@@ -54,7 +53,7 @@ namespace CheckOutTerminal
             }
             else
             {
-                Console.WriteLine("looks like an invalid char has been entered");
+                Console.WriteLine("invalid values have been entered");
                 
             }
         }
