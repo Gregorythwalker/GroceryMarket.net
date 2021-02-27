@@ -7,8 +7,9 @@ namespace CheckOutTerminal
         public void Greeting()
         {
             Console.WriteLine("Welcome to the super market please enter your order");
-            Console.WriteLine("your order can be from cost codes a,b,c or d");
-            Console.WriteLine("please start your order : ");
+            Console.WriteLine("Your order can be from cost codes a,b,c or d");
+            Console.WriteLine("Type done to quit application");
+            Console.WriteLine("Please start your order : ");
             performValidation();
         }
 
@@ -27,7 +28,7 @@ namespace CheckOutTerminal
                     var pricingRepo = new PricingRepository();
                     var checkOutService = new CheckOutTerminalService(pricingRepo);
                     var output = checkOutService.CheckOut(input);
-                    Console.WriteLine($"your total is {output}");
+                    Console.WriteLine($"Your total is {output}");
                     Console.WriteLine("Enter Products : ");
 
                 }
