@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckOutTerminal", "CheckOutTerminal\CheckOutTerminal.csproj", "{49EF2FE9-B2FA-401F-824E-A8397C090D98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryConsole", "GroceryConsole\GroceryConsole.csproj", "{593DF97A-108A-4DB8-B415-53AA4467AB37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49EF2FE9-B2FA-401F-824E-A8397C090D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49EF2FE9-B2FA-401F-824E-A8397C090D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49EF2FE9-B2FA-401F-824E-A8397C090D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49EF2FE9-B2FA-401F-824E-A8397C090D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{593DF97A-108A-4DB8-B415-53AA4467AB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{593DF97A-108A-4DB8-B415-53AA4467AB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{593DF97A-108A-4DB8-B415-53AA4467AB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{593DF97A-108A-4DB8-B415-53AA4467AB37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C302F639-6387-4961-A4B2-06366F91516E}
+	EndGlobalSection
+EndGlobal
