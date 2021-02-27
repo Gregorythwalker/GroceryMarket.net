@@ -34,14 +34,22 @@ namespace CheckOutTerminal
 
         public string CheckOut(string products)
         {
-            if (string.IsNullOrWhiteSpace(products))
+            try
             {
-                message = "sorry whitespace has been entered";
-                return message;
+                if (string.IsNullOrWhiteSpace(products))
+                {
+                    message = "sorry whitespace has been entered";
+                    return message;
+                }
+                checkRegex(products);
+                countProducts(products);
+                return ($" ${calculateTotal().ToString()} NZD");
             }
-            checkRegex(products);
-            countProducts(products);
-            return ($" ${calculateTotal().ToString()} NZD");
+            catch (Exception ex)
+            {
+                throw new Exception($"something has gone wrong {ex.ToString()}");
+
+            }
         }
 
         private void checkRegex(string products)
