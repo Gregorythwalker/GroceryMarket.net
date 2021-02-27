@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckOutTerminal", "CheckOu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryConsole", "GroceryConsole\GroceryConsole.csproj", "{593DF97A-108A-4DB8-B415-53AA4467AB37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckOutTerminalTests", "CheckOutTerminalTests\CheckOutTerminalTests.csproj", "{61DAA76F-9447-4BFE-A43C-3C2056B2318A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{593DF97A-108A-4DB8-B415-53AA4467AB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{593DF97A-108A-4DB8-B415-53AA4467AB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{593DF97A-108A-4DB8-B415-53AA4467AB37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61DAA76F-9447-4BFE-A43C-3C2056B2318A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61DAA76F-9447-4BFE-A43C-3C2056B2318A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61DAA76F-9447-4BFE-A43C-3C2056B2318A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61DAA76F-9447-4BFE-A43C-3C2056B2318A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

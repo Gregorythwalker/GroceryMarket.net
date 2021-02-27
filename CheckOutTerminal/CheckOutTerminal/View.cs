@@ -23,12 +23,12 @@ namespace CheckOutTerminal
                     break;
                 }
                 else
-                {
-                    Console.WriteLine("please start your order : ");
+                {                   
                     var pricingRepo = new PricingRepository();
-                    var checkOutService = new CheckOutTerminal(pricingRepo);
+                    var checkOutService = new CheckOutTerminalService(pricingRepo);
                     var output = checkOutService.CheckOut(input);
-                    Console.WriteLine($"your total is ${output} NZD");
+                    Console.WriteLine($"your total is {output}");
+                    Console.WriteLine("Enter Products : ");
 
                 }
             }

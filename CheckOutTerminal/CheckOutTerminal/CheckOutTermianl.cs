@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace CheckOutTerminal
+
 {
-    public interface ICheckOutTermainal
+    public interface ICheckOutTerminalService
     {
         string CheckOut(string products);
     }
-    public class CheckOutTerminal : ICheckOutTermainal
+    public class CheckOutTerminalService : ICheckOutTerminalService
     {
         private readonly IPricingRepo _pricingRepo;
         private readonly IDictionary<string, int> _productDict;
         private IDictionary<string, PricingModel> _pricingDict;
+        string message;
 
-
-        public CheckOutTerminal(IPricingRepo pricingRepo)
+        public CheckOutTerminalService(IPricingRepo pricingRepo)
         {
             _pricingRepo = pricingRepo;
             _productDict = new Dictionary<string, int>();
@@ -34,27 +35,27 @@ namespace CheckOutTerminal
 
         public string CheckOut(string products)
         {
-            ;
             if (string.IsNullOrWhiteSpace(products))
             {
-                throw new NullReferenceException("Whitespace found");
+                message = "sorry whitespace has been entered";
+                return message;
             }
             checkRegex(products);
             countProducts(products);
-            return calculateTotal().ToString();
+            return ($" ${calculateTotal().ToString()} NZD");
         }
 
-        private string checkRegex(string products)
+        private void checkRegex(string products)
         {
             string Pattern = "^[A-D][a-dA-D]*$";
             if (Regex.Match(products, Pattern).Success)
             {
-                return Pattern;
+                return;
             }
             else
             {
-                Console.WriteLine("Invalid Character");
-                throw new NullReferenceException("Invalid Character");
+                Console.WriteLine("looks like an invalid char has been entered");
+                
             }
         }
 
@@ -101,10 +102,8 @@ namespace CheckOutTerminal
             {
                 if (_pricingDict.TryGetValue(product.Key, out PricingModel price))
                 {
-                    //calculate volumed total base on the total number of code and the volume size
                     var volumedTotal = (product.Value / price.VolumeSize) * price.VolumePrice;
                     var unitTotal = (product.Value % price.VolumeSize) * price.UnitPrice;
-
                     total += volumedTotal + unitTotal;
                 }
             }
