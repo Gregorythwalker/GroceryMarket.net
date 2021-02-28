@@ -8,8 +8,10 @@ namespace CheckOutTerminal
     }
     public class PricingRepository : IPricingRepo
     {
+        //implement interfaces for loose coupling
         public IDictionary<string, PricingModel> GetPricing()
         {
+            //pricing dictionary - product letter is the key with value being the pricing object
             var pricing = new Dictionary<string, PricingModel>();
             pricing.Add("A", new PricingModel { ProductCode = "A", UnitPrice = 1.25m, VolumeSize = 3, VolumePrice = 3m });
             pricing.Add("B", new PricingModel { ProductCode = "B", UnitPrice = 4.25m, VolumeSize = 1, VolumePrice = 4.25m });

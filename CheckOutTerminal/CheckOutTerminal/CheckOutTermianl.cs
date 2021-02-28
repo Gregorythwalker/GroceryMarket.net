@@ -11,6 +11,7 @@ namespace CheckOutTerminal
     }
     public class CheckOutTerminalService : ICheckOutTerminalService
     {
+        //implement interfaces for loose coupling
         private readonly IPricingRepo _pricingRepo;
         private readonly IDictionary<string, int> _productDict;
         private IDictionary<string, PricingModel> _pricingDict;
@@ -18,6 +19,7 @@ namespace CheckOutTerminal
 
         public CheckOutTerminalService(IPricingRepo pricingRepo)
         {
+            //set injected services and add product codes to productDictionary 
             _pricingRepo = pricingRepo;
             _productDict = new Dictionary<string, int>();
             SetPricing();
@@ -34,6 +36,7 @@ namespace CheckOutTerminal
 
         public string CheckOut(string products)
         {
+            // main check out method were flow and direction of logic is controlled
             try
             {
                 if (string.IsNullOrWhiteSpace(products))
@@ -54,6 +57,7 @@ namespace CheckOutTerminal
 
         private void checkRegex(string products)
         {
+            //regex to check value is between a-d 
             string Pattern = "^[A-D][a-dA-D]*$";
             if (Regex.Match(products, Pattern).Success)
             {
@@ -68,6 +72,7 @@ namespace CheckOutTerminal
 
         private void countProducts(string products)
         {
+            //count the amount of product A,B,C,D and add to the productDictionary (Product codes are the keys)
             for (int i = 0; i < products.Length; i++)
             {
                 var pCode = products[i].ToString();
@@ -104,7 +109,7 @@ namespace CheckOutTerminal
         private decimal calculateTotal()
         {
             var total = 0m;
-
+            //calculate money value total
             foreach (var product in _productDict)
             {
                 if (_pricingDict.TryGetValue(product.Key, out PricingModel price))

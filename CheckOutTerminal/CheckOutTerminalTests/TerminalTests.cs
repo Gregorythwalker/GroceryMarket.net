@@ -18,7 +18,7 @@ namespace CheckOutTerminalTests
             _checkOutTerminalService = new CheckOutTerminalService(_pricingRepository);
         }
 
-
+        // test range of data inputs to make sure they are correct through the check out method
         [Theory]
         [InlineData("A", " $1.25 NZD")]
         [InlineData("AAA", " $3.00 NZD")]
@@ -46,6 +46,7 @@ namespace CheckOutTerminalTests
             Assert.Equal(value,expected);
 
         }
+        // test white space 
         [Theory]
         [InlineData("", "sorry whitespace has been entered")]
         [InlineData(" ABCDABA", " $13.25 NZD")]
@@ -54,6 +55,7 @@ namespace CheckOutTerminalTests
             var value = _checkOutTerminalService.CheckOut(input);
             Assert.Equal(value, expected);
         }
+        //test different characters
         [Theory]
         [InlineData("^&%&^", " $0.00 NZD")]
         public void checkSpecialChars(string input, string expected)
